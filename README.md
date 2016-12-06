@@ -25,12 +25,44 @@ $ ssh $USER@$AGENT #Bash
 ``` 
 3.Create a directory for the installer files:  
 ```Bash 
-$ sudo mkdir -p /opt/dcos_install_tmp
+$ sudo mkdir -p /opt/dcos_install_tmp #Bash
 ```
 
 4.Unpackage the dcos-install.tar file:  
 
 ```Bash 
-$ sudo tar xf dcos-install.tar -C /opt/dcos_install_tmp
+$ sudo tar xf dcos-install.tar -C /opt/dcos_install_tmp #Bash
+```
+
+5.Run this command to install DC/OS on your agent nodes. You must designate your agent nodes as public or private.  
+  
+  
+Private agent nodes:  
+
+```Bash 
+$ sudo bash /opt/dcos_install_tmp/dcos_install.sh slave #Bash
+```
+  
+  
+Public agent nodes:  
+
+```Bash 
+$ sudo bash /opt/dcos_install_tmp/dcos_install.sh slave_public #Bash
+```
+  
+    
+    
+Tip: You can verify the node type by running this command from the DC/OS CLI.    
+  
+• Run this command to count the private agents. 
+  
+```Bash 
+$ dcos node --json | jq --raw-output '.[] | select(.reserved_resources.slave_public == null) | .id' | wc -l
+```
+  
+• Run this command to count the public agents.  
+  
+  ```Bash 
+$ dcos node --json | jq --raw-output '.[] | select(.reserved_resources.slave_public != null) | .id' | wc -l
 ```
 
