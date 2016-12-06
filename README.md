@@ -1,3 +1,4 @@
+
 Adding Agent Nodes
 ====
 You can add agent nodes to an existing DC/OS cluster.<br> 
@@ -18,7 +19,18 @@ Copy the archived DC/OS installer file (dcos-install.tar) to the agent node. Thi
 ```Bash
 $ scp ~/dcos-install.tar $username@$node-ip:~/dcos-install.tar #Bash
 ``` 
-SSH to the machine:  
+2.SSH to the machine:  
 ```Bash 
 $ ssh $USER@$AGENT #Bash
 ``` 
+3.Create a directory for the installer files:  
+```Bash 
+$ sudo mkdir -p /opt/dcos_install_tmp
+```
+
+4.Unpackage the dcos-install.tar file:  
+
+```Bash 
+$ sudo tar xf dcos-install.tar -C /opt/dcos_install_tmp
+```
+
