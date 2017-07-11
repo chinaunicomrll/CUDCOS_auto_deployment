@@ -1,0 +1,4 @@
+---
+network: enp0s8
+clustername: dcos
+sshuser: root
