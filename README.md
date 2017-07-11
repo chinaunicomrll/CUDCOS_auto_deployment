@@ -16,7 +16,7 @@ curl -O https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh
 
 
 配置dcos_ansible的 group_vars/all 文件  
----  
+
 network: enp0s8
 clustername: dcos
 sshuser: root
