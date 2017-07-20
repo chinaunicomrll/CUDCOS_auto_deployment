@@ -143,7 +143,7 @@ add the ip to be added under `[add]`
 after configration, run 
 `sh add.sh` to start add node.
 
-
+Thanks.
 
 
 
