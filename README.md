@@ -1,4 +1,5 @@
 1.	安装ansible  
+
 安装ansible的机器必须可以ssh到集群中节点  
 ```Bash
 rpm -iUvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm  
